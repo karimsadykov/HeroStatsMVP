@@ -102,7 +102,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 //            let hero = heroes[indexPath.row]
 //            detailAlbumViewController.hero = hero
 //            presenter(detailAlbumViewController, animated: true)
-            let hero = presenter.heros?[indexPath.row]
+            let hero = presenter.selectRoles?[indexPath.row]
             presenter.tapOnTheComment(hero: hero)
         }
     }
