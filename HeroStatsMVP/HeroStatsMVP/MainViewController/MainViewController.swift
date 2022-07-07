@@ -98,10 +98,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             presenter.selectRoleCategory(indexPath.row)
             heroCollection.reloadData()
         } else {
-//            let detailAlbumViewController = DetailViewController()
-//            let hero = heroes[indexPath.row]
-//            detailAlbumViewController.hero = hero
-//            presenter(detailAlbumViewController, animated: true)
             let hero = presenter.selectRoles?[indexPath.row]
             presenter.tapOnTheComment(hero: hero)
         }

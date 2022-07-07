@@ -27,7 +27,6 @@ class DetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(30)
         label.textAlignment = .center
-        label.text = "Karim Sadykov CEO"
         return label
     }()
     
@@ -92,24 +91,8 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         setup()
         presenter.setHero()
-//        configLabel()
        }
     
-//    func configLabel() {
-//        nameLabel.text = presenter.hero?.localized_name
-//        attackTypeLabel.text = "Atack type: \((presenter.hero?.attack_type)!)"
-//        baseHealthLabel.text = "Base health: \((presenter.hero?.base_health)!)"
-//        baseManaLabel.text = "Base mana: \((presenter.hero?.base_mana)!)"
-//        baseAtackMinLabel.text = "Base min Atack: \((presenter.hero?.base_attack_min)!)"
-//        baseStrLabel.text = "Base Strenght: \((presenter.hero?.base_str)!)"
-//        baseSpeedLabel.text = "Base Speed: \((presenter.hero?.move_speed)!)"
-//
-//        let urlString = "https://api.opendota.com" + (presenter.hero?.img)!
-//        let url = URL(string: urlString)
-//        heroImage.downloaded(from: url!)
-//    }
-    
-
     func setup() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(heroImage)

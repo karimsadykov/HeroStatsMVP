@@ -53,35 +53,11 @@ class HeroCollextionViewCel: UICollectionViewCell {
         
     }
     func configureHeroCell(heros: HeroStatsData) {
-        
-//        let urlString = "https://api.opendota.com" + (heros.img!)
-//
-//            NetworkService.shared.r`equest(urlString: urlString) { result in
-//                switch result {
-//                case .success(let data):
-//                    let image = UIImage(data: data)
-//                    self.imageView.image = image
-//                case .failure(let error):
-//                    self.imageView.image = nil
-//                    print("No album logo" + error.localizedDescription)
-//                }
-//            }
-       
-       
-        
-//        if let url = URL(string: "https://api.opendota.com" + (heros.img!)) {
-//            imageView.downloaded(from: url)
-//        }
-//        else {
-//            imageView.image = nil
-//        }
+
         let urlString = "https://api.opendota.com" + (heros.img)!
         let url = URL(string: urlString)
         imageView.downloaded(from: url!)
         
         label.text = heros.localized_name
-    }
-    
-    
-    
+    }  
 }

@@ -33,7 +33,6 @@ class NetworkService: NetworkServiceProtocol {
     
    
     func getComments(_ completion: @escaping (Result<[HeroStatsData]?, Error>) -> Void) {
-//        let urlString = "https://jsonplaceholder.typicode.com/comments"
         let urlString = "https://api.opendota.com/api/herostats"
         guard let url = URL(string: urlString) else {return}
         
