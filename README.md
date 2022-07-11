@@ -1,3 +1,0 @@
-# HeroStats
-
-UrlSession, UserDefaults, MVP
