@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     private var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
     private var attackTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     private var baseHealthLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
     private var baseManaLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -63,7 +63,7 @@ class DetailViewController: UIViewController {
     private var baseAtackMinLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
     private var baseStrLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController {
     private var baseSpeedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(30)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()

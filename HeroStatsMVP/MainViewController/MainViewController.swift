@@ -49,10 +49,10 @@ class MainViewController: UIViewController {
         heroCollection.delegate = self
 
         NSLayoutConstraint.activate([
-        heroRolesCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            heroRolesCollection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
         heroRolesCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         heroRolesCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        heroRolesCollection.heightAnchor.constraint(equalToConstant: 60),
+        heroRolesCollection.heightAnchor.constraint(equalToConstant: 30),
         
         heroCollection.topAnchor.constraint(equalTo: heroRolesCollection.bottomAnchor),
         heroCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor),

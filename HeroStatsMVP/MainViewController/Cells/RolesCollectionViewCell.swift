@@ -12,7 +12,7 @@ class RolesCollectionViewCell: UICollectionViewCell {
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font.withSize(14)
+        label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         label.textColor = .white
         return label
