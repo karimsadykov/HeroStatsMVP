@@ -56,7 +56,7 @@ class HeroCollextionViewCel: UICollectionViewCell {
 
         let urlString = "https://api.opendota.com" + (heros.img)!
         let url = URL(string: urlString)
-        imageView.downloaded(from: url!)
+        imageView.sd_setImage(with: url)
         
         label.text = heros.localized_name
     }  

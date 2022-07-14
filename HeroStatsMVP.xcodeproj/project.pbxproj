@@ -24,10 +24,11 @@
 		5D877F702875B6A600758E18 /* HeroCollextionViewCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F6F2875B6A600758E18 /* HeroCollextionViewCel.swift */; };
 		5D877F722875B6B200758E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F712875B6B200758E18 /* DetailViewController.swift */; };
 		5D877F742875B6C000758E18 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F732875B6C000758E18 /* DetailPresenter.swift */; };
-		5D877F7B2875B7F300758E18 /* Image + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F7A2875B7F300758E18 /* Image + Extension.swift */; };
+		8BA2E1F9F04264137F778F49 /* Pods_HeroStatsMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CCA4AEC8B79594DCDB7056 /* Pods_HeroStatsMVP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541A233D28B3FAA68ECC2D66 /* Pods-HeroStatsMVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroStatsMVP.debug.xcconfig"; path = "Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP.debug.xcconfig"; sourceTree = "<group>"; };
 		5D877F3E2875B59800758E18 /* HeroStatsMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroStatsMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D877F412875B59800758E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D877F432875B59800758E18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,8 @@
 		5D877F6F2875B6A600758E18 /* HeroCollextionViewCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollextionViewCel.swift; sourceTree = "<group>"; };
 		5D877F712875B6B200758E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5D877F732875B6C000758E18 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
-		5D877F7A2875B7F300758E18 /* Image + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image + Extension.swift"; sourceTree = "<group>"; };
+		5E1FB60FB2AE993BCF49642A /* Pods-HeroStatsMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroStatsMVP.release.xcconfig"; path = "Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP.release.xcconfig"; sourceTree = "<group>"; };
+		90CCA4AEC8B79594DCDB7056 /* Pods_HeroStatsMVP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeroStatsMVP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA2E1F9F04264137F778F49 /* Pods_HeroStatsMVP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,8 @@
 			children = (
 				5D877F402875B59800758E18 /* HeroStatsMVP */,
 				5D877F3F2875B59800758E18 /* Products */,
+				A0DC18B2BEE0DD097329CB6F /* Pods */,
+				8F8015982B23E7013126F0A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,7 +93,6 @@
 				5D877F782875B70E00758E18 /* Service Layer */,
 				5D877F772875B6FC00758E18 /* MainViewController */,
 				5D877F752875B6D300758E18 /* DetailViewController */,
-				5D877F7C2875B80400758E18 /* Extension */,
 				5D877F4A2875B59D00758E18 /* Assets.xcassets */,
 				5D877F4C2875B59D00758E18 /* LaunchScreen.storyboard */,
 				5D877F4F2875B59D00758E18 /* Info.plist */,
@@ -143,12 +147,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5D877F7C2875B80400758E18 /* Extension */ = {
+		8F8015982B23E7013126F0A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5D877F7A2875B7F300758E18 /* Image + Extension.swift */,
+				90CCA4AEC8B79594DCDB7056 /* Pods_HeroStatsMVP.framework */,
 			);
-			path = Extension;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0DC18B2BEE0DD097329CB6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				541A233D28B3FAA68ECC2D66 /* Pods-HeroStatsMVP.debug.xcconfig */,
+				5E1FB60FB2AE993BCF49642A /* Pods-HeroStatsMVP.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D877F522875B59D00758E18 /* Build configuration list for PBXNativeTarget "HeroStatsMVP" */;
 			buildPhases = (
+				BDFB09F493EF6A9106940485 /* [CP] Check Pods Manifest.lock */,
 				5D877F3A2875B59800758E18 /* Sources */,
 				5D877F3B2875B59800758E18 /* Frameworks */,
 				5D877F3C2875B59800758E18 /* Resources */,
+				1CAAD04764FC3887BD4821B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +231,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CAAD04764FC3887BD4821B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDFB09F493EF6A9106940485 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeroStatsMVP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D877F3A2875B59800758E18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -228,7 +285,6 @@
 				5D877F422875B59800758E18 /* AppDelegate.swift in Sources */,
 				5D877F682875B67B00758E18 /* MainPresenter.swift in Sources */,
 				5D877F6A2875B68700758E18 /* HeroRolesCollection.swift in Sources */,
-				5D877F7B2875B7F300758E18 /* Image + Extension.swift in Sources */,
 				5D877F722875B6B200758E18 /* DetailViewController.swift in Sources */,
 				5D877F742875B6C000758E18 /* DetailPresenter.swift in Sources */,
 				5D877F582875B5EF00758E18 /* Router.swift in Sources */,
@@ -370,6 +426,7 @@
 		};
 		5D877F532875B59D00758E18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 541A233D28B3FAA68ECC2D66 /* Pods-HeroStatsMVP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +455,7 @@
 		};
 		5D877F542875B59D00758E18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E1FB60FB2AE993BCF49642A /* Pods-HeroStatsMVP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -160,7 +160,7 @@ extension DetailViewController:DetailViewProtocol {
 
         let urlString = "https://api.opendota.com" + (hero?.img)!
         let url = URL(string: urlString)
-        heroImage.downloaded(from: url!)
+        heroImage.sd_setImage(with: url)
     }
     
     

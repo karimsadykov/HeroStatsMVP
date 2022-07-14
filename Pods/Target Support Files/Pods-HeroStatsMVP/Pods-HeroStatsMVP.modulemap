@@ -1,0 +1,6 @@
+framework module Pods_HeroStatsMVP {
+  umbrella header "Pods-HeroStatsMVP-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainViewController: UIViewController {
     
@@ -23,10 +24,7 @@ class MainViewController: UIViewController {
     }()
     
     var presenter: MainViewPresenter!
-    
-    
-    
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
