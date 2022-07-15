@@ -21,7 +21,7 @@ class HeroCollection: UICollectionView {
     }
     
     private func setup() {
-        register(HeroCollextionViewCel.self, forCellWithReuseIdentifier: "cellI")
+        register(HeroCollextionViewCell.self, forCellWithReuseIdentifier: "cellI")
         showsVerticalScrollIndicator = false
         backgroundColor = .clear
     }

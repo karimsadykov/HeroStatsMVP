@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeroCollextionViewCel: UICollectionViewCell {
+class HeroCollextionViewCell: UICollectionViewCell {
     
     var imageView: UIImageView = {
         let imageView = UIImageView()

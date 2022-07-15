@@ -21,7 +21,7 @@
 		5D877F6A2875B68700758E18 /* HeroRolesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F692875B68700758E18 /* HeroRolesCollection.swift */; };
 		5D877F6C2875B69300758E18 /* HeroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F6B2875B69300758E18 /* HeroCollection.swift */; };
 		5D877F6E2875B69E00758E18 /* RolesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F6D2875B69E00758E18 /* RolesCollectionViewCell.swift */; };
-		5D877F702875B6A600758E18 /* HeroCollextionViewCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F6F2875B6A600758E18 /* HeroCollextionViewCel.swift */; };
+		5D877F702875B6A600758E18 /* HeroCollextionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F6F2875B6A600758E18 /* HeroCollextionViewCell.swift */; };
 		5D877F722875B6B200758E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F712875B6B200758E18 /* DetailViewController.swift */; };
 		5D877F742875B6C000758E18 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D877F732875B6C000758E18 /* DetailPresenter.swift */; };
 		8BA2E1F9F04264137F778F49 /* Pods_HeroStatsMVP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CCA4AEC8B79594DCDB7056 /* Pods_HeroStatsMVP.framework */; };
@@ -45,7 +45,7 @@
 		5D877F692875B68700758E18 /* HeroRolesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRolesCollection.swift; sourceTree = "<group>"; };
 		5D877F6B2875B69300758E18 /* HeroCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollection.swift; sourceTree = "<group>"; };
 		5D877F6D2875B69E00758E18 /* RolesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesCollectionViewCell.swift; sourceTree = "<group>"; };
-		5D877F6F2875B6A600758E18 /* HeroCollextionViewCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollextionViewCel.swift; sourceTree = "<group>"; };
+		5D877F6F2875B6A600758E18 /* HeroCollextionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollextionViewCell.swift; sourceTree = "<group>"; };
 		5D877F712875B6B200758E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5D877F732875B6C000758E18 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		5E1FB60FB2AE993BCF49642A /* Pods-HeroStatsMVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroStatsMVP.release.xcconfig"; path = "Target Support Files/Pods-HeroStatsMVP/Pods-HeroStatsMVP.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5D877F6D2875B69E00758E18 /* RolesCollectionViewCell.swift */,
-				5D877F6F2875B6A600758E18 /* HeroCollextionViewCel.swift */,
+				5D877F6F2875B6A600758E18 /* HeroCollextionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 				5D877F442875B59800758E18 /* SceneDelegate.swift in Sources */,
 				5D877F562875B5E000758E18 /* AssemblyBuilder.swift in Sources */,
 				5D877F6C2875B69300758E18 /* HeroCollection.swift in Sources */,
-				5D877F702875B6A600758E18 /* HeroCollextionViewCel.swift in Sources */,
+				5D877F702875B6A600758E18 /* HeroCollextionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

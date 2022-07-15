@@ -71,7 +71,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.label.text = presenter.roles?[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellI", for: indexPath) as! HeroCollextionViewCel
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellI", for: indexPath) as! HeroCollextionViewCell
             let hero = (presenter.selectRoles?[indexPath.row])!
             cell.configureHeroCell(heros: hero)
             return cell
