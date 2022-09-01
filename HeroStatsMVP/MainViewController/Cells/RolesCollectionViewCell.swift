@@ -9,6 +9,8 @@ import UIKit
 
 class RolesCollectionViewCell: UICollectionViewCell {
     
+    static public let id = "cell"
+    
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +38,6 @@ class RolesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setup() {
-        
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: contentView.topAnchor),

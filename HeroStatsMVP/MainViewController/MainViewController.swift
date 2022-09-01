@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     private let heroRolesCollection: HeroRolesCollection = {
         let heroRolesCollection = HeroRolesCollection()
         heroRolesCollection.translatesAutoresizingMaskIntoConstraints = false
-        
         return heroRolesCollection
     }()
 
@@ -47,7 +46,7 @@ class MainViewController: UIViewController {
         heroCollection.delegate = self
 
         NSLayoutConstraint.activate([
-            heroRolesCollection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            heroRolesCollection.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
         heroRolesCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         heroRolesCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         heroRolesCollection.heightAnchor.constraint(equalToConstant: 30),
@@ -65,13 +64,13 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == heroRolesCollection {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RolesCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RolesCollectionViewCell.id, for: indexPath) as! RolesCollectionViewCell
      
    
             cell.label.text = presenter.roles?[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellI", for: indexPath) as! HeroCollextionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroCollextionViewCell.id, for: indexPath) as! HeroCollextionViewCell
             let hero = (presenter.selectRoles?[indexPath.row])!
             cell.configureHeroCell(heros: hero)
             return cell
@@ -106,16 +105,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == heroRolesCollection {
-            return CGSize(width: 100, height: 20)
+            return CGSize(width: 100,
+                          height: 20)
         } else {
-        return CGSize(width: 170, height: 170)
+            return CGSize(width: collectionView.frame.width / 3.02,
+                          height: collectionView.frame.width / 4)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
-        
     }
 }
 

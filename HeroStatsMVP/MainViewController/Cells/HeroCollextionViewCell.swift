@@ -9,22 +9,22 @@ import UIKit
 
 class HeroCollextionViewCell: UICollectionViewCell {
     
+    static public let id = "cell"
+    
     var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         
         return imageView
     }()
     
-    var label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.textAlignment = .center
-        return label
+    let activity: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView()
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        return activity
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -37,27 +37,24 @@ class HeroCollextionViewCell: UICollectionViewCell {
     func setup() {
         
         addSubview(imageView)
-        addSubview(label)
-        
+        addSubview(activity)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 140),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor)
+            activity.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activity.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
     }
     func configureHeroCell(heros: HeroStatsData) {
-
+        activity.startAnimating()
         let urlString = "https://api.opendota.com" + (heros.img)!
         let url = URL(string: urlString)
-        imageView.sd_setImage(with: url)
-        
-        label.text = heros.localized_name
+        imageView.sd_setImage(with: url) {_,_,_,_ in 
+            self.activity.stopAnimating()
+        }
     }  
 }

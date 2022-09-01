@@ -12,7 +12,9 @@ class HeroCollection: UICollectionView {
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        super.init(frame: frame, collectionViewLayout: flowLayout)
+        flowLayout.minimumLineSpacing = 1
+        flowLayout.minimumInteritemSpacing = 1
+        super.init(frame: .zero, collectionViewLayout: flowLayout)
         setup()
     }
     
@@ -21,7 +23,7 @@ class HeroCollection: UICollectionView {
     }
     
     private func setup() {
-        register(HeroCollextionViewCell.self, forCellWithReuseIdentifier: "cellI")
+        register(HeroCollextionViewCell.self, forCellWithReuseIdentifier: HeroCollextionViewCell.id)
         showsVerticalScrollIndicator = false
         backgroundColor = .clear
     }

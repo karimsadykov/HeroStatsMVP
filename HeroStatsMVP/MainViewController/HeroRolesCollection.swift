@@ -24,7 +24,7 @@ class HeroRolesCollection: UICollectionView{
     }
     
     private func setup() {
-        register(RolesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        register(RolesCollectionViewCell.self, forCellWithReuseIdentifier: RolesCollectionViewCell.id)
         backgroundColor = .clear
         showsHorizontalScrollIndicator = false
     }

@@ -84,7 +84,17 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 16
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.register(HeroCollextionViewCell.self, forCellWithReuseIdentifier: HeroCollextionViewCell.id)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +104,6 @@ class DetailViewController: UIViewController {
        }
     
     func setup() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(heroImage)
         view.addSubview(nameLabel)
         view.addSubview(attackTypeLabel)
@@ -103,6 +112,9 @@ class DetailViewController: UIViewController {
         view.addSubview(baseAtackMinLabel)
         view.addSubview(baseStrLabel)
         view.addSubview(baseSpeedLabel)
+//        view.addSubview(collectionView)
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         NSLayoutConstraint.activate([
             
             heroImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
@@ -143,13 +155,19 @@ class DetailViewController: UIViewController {
             baseSpeedLabel.topAnchor.constraint(equalTo: baseStrLabel.bottomAnchor),
             baseSpeedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseSpeedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseSpeedLabel.heightAnchor.constraint(equalToConstant: 60)
+            baseSpeedLabel.heightAnchor.constraint(equalToConstant: 60),
+            
+//            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+//            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
         ])
     }
 }
 
 extension DetailViewController:DetailViewProtocol {
     func setHero(hero: HeroStatsData?) {
+        print(hero)
         nameLabel.text = hero?.localized_name
         attackTypeLabel.text = "Atack type: \((hero?.attack_type)!)"
         baseHealthLabel.text = "Base health: \((hero?.base_health)!)"
@@ -165,3 +183,40 @@ extension DetailViewController:DetailViewProtocol {
     
     
 }
+
+//extension DetailViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        randomHeroesArray.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idRandomHeroCollectionView, for: indexPath) as! RandomHeroCollectionViewCell
+//        let heroModel = randomHeroesArray[indexPath.row]
+//        cell.cellConfigure(model: heroModel)
+//        return cell
+//    }
+//}
+//
+////MARK: - UICollectionViewDelegate
+//
+//extension DetailViewController: UICollectionViewDelegate {
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let heroModel = randomHeroesArray[indexPath.row]
+//
+//        let detailsHeroViewController = DetailsHeroViewController()
+//        detailsHeroViewController.heroModel = heroModel
+//        detailsHeroViewController.heroesArray = heroesArray
+//        navigationController?.pushViewController(detailsHeroViewController, animated: true)
+//    }
+//}
+//
+////MARK: - UICollectionViewDelegateFlowLayout
+//
+//extension DetailViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        CGSize(width: collectionView.frame.height,
+//               height: collectionView.frame.height)
+//    }
+//}
