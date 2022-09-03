@@ -30,7 +30,7 @@ protocol MainViewPresenter:AnyObject {
     var roles: [String]? {get set}
     var roleId: Int? { get set }
     var selectRoles: [HeroStatsData]? {get set}
-    func tapOnTheComment(hero:HeroStatsData?)
+    func tapOnTheComment(hero:HeroStatsData?, _ selectRoles: [HeroStatsData]?)
 }
 
 
@@ -83,8 +83,8 @@ class MainPresenter:MainViewPresenter {
     
     
     
-    func tapOnTheComment(hero: HeroStatsData?) {
-        router?.showDeteil(hero: hero)
+    func tapOnTheComment(hero: HeroStatsData?, _ selectRoles: [HeroStatsData]?) {
+        router?.showDeteil(hero: hero, selectRoles)
     }
     
 

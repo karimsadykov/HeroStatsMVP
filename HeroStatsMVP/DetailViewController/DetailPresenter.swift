@@ -16,8 +16,10 @@ protocol DetailViewPresenterProtocol: AnyObject {
     init(view: DetailViewProtocol,
          networkService: NetworkServiceProtocol,
          router: RouterProtocol,
-         hero: HeroStatsData?)
+         hero: HeroStatsData?,
+         selectRoles: [HeroStatsData]?)
     func setHero()
+    var selectRoles: [HeroStatsData]? {get set}
   
     
 }
@@ -31,13 +33,15 @@ class DetailPresenter:DetailViewPresenterProtocol {
     let networkService: NetworkServiceProtocol!
     var hero: HeroStatsData?
     var router: RouterProtocol?
+    var selectRoles: [HeroStatsData]?
     
     
-    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, hero: HeroStatsData?) {
+    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, hero: HeroStatsData?, selectRoles: [HeroStatsData]?) {
         self.networkService = networkService
         self.view = view
         self.hero = hero
         self.router = router
+        self.selectRoles = selectRoles
     }
     
     public func setHero() {

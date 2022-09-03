@@ -10,7 +10,7 @@ import UIKit
 
 protocol AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> UIViewController
-    func createDetailModule(hero: HeroStatsData?, router: RouterProtocol) -> UIViewController
+    func createDetailModule(hero: HeroStatsData?, _ selectRoles: [HeroStatsData]?, router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
@@ -23,10 +23,10 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-    func createDetailModule(hero: HeroStatsData?, router: RouterProtocol) -> UIViewController {
+    func createDetailModule(hero: HeroStatsData?, _ selectRoles: [HeroStatsData]?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
         let networkService = NetworkService()
-        let presenter = DetailPresenter(view: view, networkService: networkService, router: router, hero: hero)
+        let presenter = DetailPresenter(view: view, networkService: networkService, router: router, hero: hero, selectRoles: selectRoles)
         view.presenter = presenter
         return view
     }

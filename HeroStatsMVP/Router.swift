@@ -15,7 +15,7 @@ protocol RouterMain {
 
 protocol RouterProtocol:RouterMain {
     func initialVC ()
-    func showDeteil(hero:HeroStatsData?)
+    func showDeteil(hero:HeroStatsData?, _ selectRoles: [HeroStatsData]?)
 }
 
 class Router:RouterProtocol {
@@ -43,9 +43,9 @@ class Router:RouterProtocol {
       
     }
     
-    func showDeteil(hero: HeroStatsData?) {
+    func showDeteil(hero: HeroStatsData?, _ selectRoles: [HeroStatsData]?) {
         if let navController = navigationController {
-            guard let detailViewController = asamblyBuilder?.createDetailModule(hero: hero, router: self) else {return }
+            guard let detailViewController = asamblyBuilder?.createDetailModule(hero: hero, selectRoles, router: self) else {return }
             navController.pushViewController(detailViewController, animated: true)
             
         }

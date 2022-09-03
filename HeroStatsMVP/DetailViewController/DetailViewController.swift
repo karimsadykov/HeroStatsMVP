@@ -22,25 +22,12 @@ class DetailViewController: UIViewController {
         return imageView
     }()
     
-    private var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
     private var attackTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -48,7 +35,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -56,7 +44,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -64,7 +53,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -72,7 +62,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -80,7 +71,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.layer.borderWidth = 1
         return label
     }()
     
@@ -101,80 +93,75 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         setup()
         presenter.setHero()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 34)]
        }
     
     func setup() {
         view.addSubview(heroImage)
-        view.addSubview(nameLabel)
         view.addSubview(attackTypeLabel)
         view.addSubview(baseHealthLabel)
         view.addSubview(baseManaLabel)
         view.addSubview(baseAtackMinLabel)
         view.addSubview(baseStrLabel)
         view.addSubview(baseSpeedLabel)
-//        view.addSubview(collectionView)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+        view.addSubview(collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         NSLayoutConstraint.activate([
             
-            heroImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            heroImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             heroImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             heroImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             heroImage.heightAnchor.constraint(equalToConstant: 188),
-            
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 60),
-            
+//
             attackTypeLabel.topAnchor.constraint(equalTo: heroImage.bottomAnchor),
             attackTypeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             attackTypeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            attackTypeLabel.heightAnchor.constraint(equalToConstant: 60),
+
+            attackTypeLabel.heightAnchor.constraint(equalToConstant: 50),
             
             baseHealthLabel.topAnchor.constraint(equalTo: attackTypeLabel.bottomAnchor),
             baseHealthLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseHealthLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseHealthLabel.heightAnchor.constraint(equalToConstant: 60),
+            baseHealthLabel.heightAnchor.constraint(equalToConstant: 50),
             
             baseManaLabel.topAnchor.constraint(equalTo: baseHealthLabel.bottomAnchor),
             baseManaLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseManaLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseManaLabel.heightAnchor.constraint(equalToConstant: 60),
+            baseManaLabel.heightAnchor.constraint(equalToConstant: 50),
             
             baseAtackMinLabel.topAnchor.constraint(equalTo: baseManaLabel.bottomAnchor),
             baseAtackMinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseAtackMinLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseAtackMinLabel.heightAnchor.constraint(equalToConstant: 60),
+            baseAtackMinLabel.heightAnchor.constraint(equalToConstant: 50),
             
             baseStrLabel.topAnchor.constraint(equalTo: baseAtackMinLabel.bottomAnchor),
             baseStrLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseStrLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseStrLabel.heightAnchor.constraint(equalToConstant: 60),
+            baseStrLabel.heightAnchor.constraint(equalToConstant: 50),
             
             baseSpeedLabel.topAnchor.constraint(equalTo: baseStrLabel.bottomAnchor),
             baseSpeedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             baseSpeedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            baseSpeedLabel.heightAnchor.constraint(equalToConstant: 60),
+            baseSpeedLabel.heightAnchor.constraint(equalToConstant: 50),
             
-//            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-//            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15)
         ])
     }
 }
 
 extension DetailViewController:DetailViewProtocol {
     func setHero(hero: HeroStatsData?) {
-        print(hero)
-        nameLabel.text = hero?.localized_name
-        attackTypeLabel.text = "Atack type: \((hero?.attack_type)!)"
-        baseHealthLabel.text = "Base health: \((hero?.base_health)!)"
-        baseManaLabel.text = "Base mana: \((hero?.base_mana)!)"
-        baseAtackMinLabel.text = "Base min Atack: \((hero?.base_attack_min)!)"
-        baseStrLabel.text = "Base Strenght: \((hero?.base_str)!)"
-        baseSpeedLabel.text = "Base Speed: \((hero?.move_speed)!)"
+        navigationItem.title = hero?.localized_name
+        attackTypeLabel.text = "    Atack type: \((hero?.attack_type)!)"
+        baseHealthLabel.text = "    Base health: \((hero?.base_health)!)"
+        baseManaLabel.text = "    Base mana: \((hero?.base_mana)!)"
+        baseAtackMinLabel.text = "    Base min Atack: \((hero?.base_attack_min)!)"
+        baseStrLabel.text = "    Base Strenght: \((hero?.base_str)!)"
+        baseSpeedLabel.text = "    Base Speed: \((hero?.move_speed)!)"
 
         let urlString = "https://api.opendota.com" + (hero?.img)!
         let url = URL(string: urlString)
@@ -184,39 +171,39 @@ extension DetailViewController:DetailViewProtocol {
     
 }
 
-//extension DetailViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        randomHeroesArray.count
-//    }
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        presenter.selectRoles?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroCollextionViewCell.id, for: indexPath) as! HeroCollextionViewCell
+        let hero = (presenter.selectRoles?[indexPath.row])!
+        cell.configureHeroCell(heros: hero)
+        return cell
+    }
+}
+
+//MARK: - UICollectionViewDelegate
+
+extension DetailViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+//        let heroModel = presenter.selectRoles?[indexPath.row]
 //
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idRandomHeroCollectionView, for: indexPath) as! RandomHeroCollectionViewCell
-//        let heroModel = randomHeroesArray[indexPath.row]
-//        cell.cellConfigure(model: heroModel)
-//        return cell
-//    }
-//}
-//
-////MARK: - UICollectionViewDelegate
-//
-//extension DetailViewController: UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let heroModel = randomHeroesArray[indexPath.row]
-//
-//        let detailsHeroViewController = DetailsHeroViewController()
+//        let detailsHeroViewController = DetailViewController()
 //        detailsHeroViewController.heroModel = heroModel
 //        detailsHeroViewController.heroesArray = heroesArray
 //        navigationController?.pushViewController(detailsHeroViewController, animated: true)
-//    }
-//}
-//
-////MARK: - UICollectionViewDelegateFlowLayout
-//
-//extension DetailViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        CGSize(width: collectionView.frame.height,
-//               height: collectionView.frame.height)
-//    }
-//}
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.height,
+               height: collectionView.frame.height / 1.5)
+    }
+}

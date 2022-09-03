@@ -96,7 +96,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             heroCollection.reloadData()
         } else {
             let hero = presenter.selectRoles?[indexPath.row]
-            presenter.tapOnTheComment(hero: hero)
+            presenter.tapOnTheComment(hero: hero, presenter.selectRoles)
         }
     }
    
