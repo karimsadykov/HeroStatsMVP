@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     private var attackTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     private var baseHealthLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
     private var baseManaLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
     private var baseAtackMinLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -61,7 +61,7 @@ class DetailViewController: UIViewController {
     private var baseStrLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
     private var baseSpeedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .left
         label.layer.borderWidth = 1
         return label
@@ -93,7 +93,7 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         setup()
         presenter.setHero()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 34)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
        }
     
     func setup() {
@@ -189,13 +189,8 @@ extension DetailViewController: UICollectionViewDataSource {
 extension DetailViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-//        let heroModel = presenter.selectRoles?[indexPath.row]
-//
-//        let detailsHeroViewController = DetailViewController()
-//        detailsHeroViewController.heroModel = heroModel
-//        detailsHeroViewController.heroesArray = heroesArray
-//        navigationController?.pushViewController(detailsHeroViewController, animated: true)
+        let hero = presenter.selectRoles?[indexPath.row]
+        presenter.tapHero(hero)
     }
 }
 

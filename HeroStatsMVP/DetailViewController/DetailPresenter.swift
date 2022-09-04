@@ -19,6 +19,7 @@ protocol DetailViewPresenterProtocol: AnyObject {
          hero: HeroStatsData?,
          selectRoles: [HeroStatsData]?)
     func setHero()
+    func tapHero(_ hero: HeroStatsData?)
     var selectRoles: [HeroStatsData]? {get set}
   
     
@@ -47,6 +48,10 @@ class DetailPresenter:DetailViewPresenterProtocol {
     public func setHero() {
         self.view?.setHero(hero: hero)
         
+    }
+    
+    func tapHero(_ hero: HeroStatsData?) {
+        router?.showDeteil(hero: hero, self.selectRoles)
     }
   
   
