@@ -1,11 +1,6 @@
 # HeroStatsMVP
-
-### It's a HeroStats Application
-
-  
 <br />
 <br />
-
   
 **Shortly about stack:**
 - UIKit, 
